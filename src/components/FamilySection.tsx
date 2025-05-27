@@ -62,31 +62,34 @@ const FamilySection = () => {
   const currentMember = familyMembers[currentIndex];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-100 via-violet-50 to-purple-200 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-violet-25 to-purple-100 p-6">
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold text-purple-800 text-center mb-8">Family</h1>
         
-        {/* Family Members Overview - Overlapping Cards */}
-        <div className="relative mb-8 h-48">
-          <div className="flex justify-center items-center h-full">
+        {/* Family Members in Line with Overlap */}
+        <div className="relative mb-8 h-40 flex justify-center items-center">
+          <div className="flex justify-center items-center">
             {familyMembers.map((member, index) => {
-              const offset = (index - 2) * 60; // Center the middle card
-              const zIndex = index === currentIndex ? 20 : 10;
-              const scale = index === currentIndex ? 1 : 0.85;
-              const opacity = index === currentIndex ? 1 : 0.7;
+              const offset = index * 60; // Overlap by reducing spacing
+              const isActive = index === currentIndex;
+              const zIndex = isActive ? 20 : 10 - Math.abs(index - currentIndex);
+              const scale = isActive ? 1 : 0.9;
+              const opacity = isActive ? 1 : 0.8;
               
               return (
                 <div
                   key={member.id}
                   className="absolute transition-all duration-500 cursor-pointer"
                   style={{
-                    transform: `translateX(${offset}px) scale(${scale})`,
+                    transform: `translateX(${offset - 120}px) scale(${scale})`,
                     zIndex,
                     opacity
                   }}
                   onClick={() => setCurrentIndex(index)}
                 >
-                  <div className="w-32 h-32 rounded-full overflow-hidden shadow-lg border-4 border-white hover:border-purple-300 transition-all duration-300">
+                  <div className={`w-32 h-32 rounded-full overflow-hidden shadow-lg border-4 transition-all duration-300 ${
+                    isActive ? 'border-purple-400' : 'border-white'
+                  } hover:border-purple-300`}>
                     <img
                       src={member.image}
                       alt={member.name}
@@ -98,10 +101,10 @@ const FamilySection = () => {
             })}
           </div>
           
-          {/* Navigation Arrows */}
+          {/* Navigation Arrows - Only show if needed */}
           <Button
             onClick={prevMember}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm border-purple-200 text-purple-700 hover:bg-purple-100 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm border-purple-200 text-purple-700 hover:bg-purple-100 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300"
             size="sm"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -109,7 +112,7 @@ const FamilySection = () => {
           
           <Button
             onClick={nextMember}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm border-purple-200 text-purple-700 hover:bg-purple-100 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm border-purple-200 text-purple-700 hover:bg-purple-100 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300"
             size="sm"
           >
             <ChevronRight className="w-6 h-6" />
@@ -117,7 +120,7 @@ const FamilySection = () => {
         </div>
 
         {/* Current Member Details */}
-        <Card className="bg-white/80 backdrop-blur-sm border-purple-200 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+        <Card className="bg-white/60 backdrop-blur-sm border-purple-200 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
           <div className="relative">
             <img
               src={currentMember.image}
@@ -128,7 +131,7 @@ const FamilySection = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
           </div>
           
-          <div className="p-8 text-center bg-gradient-to-b from-white to-purple-50">
+          <div className="p-8 text-center bg-gradient-to-b from-white/80 to-purple-50/80">
             <h2 className="text-3xl font-bold text-purple-800 mb-2">{currentMember.name}</h2>
             <p className="text-purple-600 text-lg mb-4 font-medium">{currentMember.relation}</p>
             <p className="text-purple-700 leading-relaxed">{currentMember.description}</p>
