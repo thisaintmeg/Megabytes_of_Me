@@ -9,108 +9,63 @@ const FriendsSection = () => {
   const friends = [
     { 
       id: 1, 
-      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop',
-      position: 'top-8 left-16',
-      rotation: 'rotate-12',
-      size: 'w-20 h-20'
+      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop'
     },
     { 
       id: 2, 
-      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=300&fit=crop',
-      position: 'top-12 right-24',
-      rotation: '-rotate-6',
-      size: 'w-24 h-24'
+      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=300&fit=crop'
     },
     { 
       id: 3, 
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop',
-      position: 'top-32 left-1/4',
-      rotation: 'rotate-3',
-      size: 'w-22 h-22'
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop'
     },
     { 
       id: 4, 
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=300&fit=crop',
-      position: 'top-28 right-1/3',
-      rotation: '-rotate-12',
-      size: 'w-18 h-18'
+      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=300&fit=crop'
     },
     { 
       id: 5, 
-      image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=300&h=300&fit=crop',
-      position: 'top-52 left-20',
-      rotation: 'rotate-6',
-      size: 'w-26 h-26'
+      image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=300&h=300&fit=crop'
     },
     { 
       id: 6, 
-      image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300&h=300&fit=crop',
-      position: 'top-48 right-16',
-      rotation: '-rotate-3',
-      size: 'w-20 h-20'
+      image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300&h=300&fit=crop'
     },
     { 
       id: 7, 
-      image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=300&h=300&fit=crop',
-      position: 'top-72 left-1/2',
-      rotation: 'rotate-9',
-      size: 'w-24 h-24'
+      image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=300&h=300&fit=crop'
     },
     { 
       id: 8, 
-      image: 'https://images.unsplash.com/photo-1466442929976-97f336a657be?w=300&h=300&fit=crop',
-      position: 'top-68 right-1/4',
-      rotation: '-rotate-6',
-      size: 'w-22 h-22'
+      image: 'https://images.unsplash.com/photo-1466442929976-97f336a657be?w=300&h=300&fit=crop'
     },
     { 
       id: 9, 
-      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop',
-      position: 'top-96 left-32',
-      rotation: 'rotate-15',
-      size: 'w-20 h-20'
+      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop'
     },
     { 
       id: 10, 
-      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=300&fit=crop',
-      position: 'top-92 right-28',
-      rotation: '-rotate-8',
-      size: 'w-18 h-18'
+      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=300&fit=crop'
     },
     { 
       id: 11, 
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop',
-      position: 'top-116 left-1/3',
-      rotation: 'rotate-4',
-      size: 'w-24 h-24'
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop'
     },
     { 
       id: 12, 
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=300&fit=crop',
-      position: 'top-112 right-20',
-      rotation: '-rotate-10',
-      size: 'w-20 h-20'
+      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=300&fit=crop'
     },
     { 
       id: 13, 
-      image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=300&h=300&fit=crop',
-      position: 'top-136 left-24',
-      rotation: 'rotate-7',
-      size: 'w-22 h-22'
+      image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=300&h=300&fit=crop'
     },
     { 
       id: 14, 
-      image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300&h=300&fit=crop',
-      position: 'top-132 right-1/3',
-      rotation: '-rotate-4',
-      size: 'w-18 h-18'
+      image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300&h=300&fit=crop'
     },
     { 
       id: 15, 
-      image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=300&h=300&fit=crop',
-      position: 'top-156 left-1/2',
-      rotation: 'rotate-11',
-      size: 'w-24 h-24'
+      image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=300&h=300&fit=crop'
     }
   ];
 
@@ -119,42 +74,35 @@ const FriendsSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-violet-25 to-purple-100 p-6 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto relative">
-        <h1 className="text-4xl font-bold text-purple-800 text-center mb-8">Friends</h1>
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-yellow-25 to-pink-100 p-6">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-4xl font-bold text-orange-800 text-center mb-8 uppercase">FRIENDS</h1>
         
-        {/* Scattered Friends Layout - 15 pictures */}
-        <div className="relative min-h-[1100px]">
+        {/* Clean Grid Layout for Friends */}
+        <div className="grid grid-cols-3 md:grid-cols-5 gap-6 mb-8">
           {friends.map((friend) => (
-            <div
+            <Card
               key={friend.id}
-              className={`absolute ${friend.position} ${friend.rotation} hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer group`}
+              className="bg-white/60 backdrop-blur-sm border-orange-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group hover:scale-105"
               onClick={() => openImage(friend.image, `Friend ${friend.id}`)}
             >
-              <Card className="bg-white/60 backdrop-blur-sm border-purple-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:-rotate-0">
-                <div className={`${friend.size} relative`}>
-                  <img
-                    src={friend.image}
-                    alt={`Friend ${friend.id}`}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-              </Card>
-              
-              {/* Fun emoji reactions */}
-              <div className="absolute -top-2 -right-2 text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-bounce">
-                {friend.id % 4 === 0 ? '😄' : friend.id % 3 === 0 ? '🎉' : friend.id % 2 === 0 ? '💫' : '✨'}
+              <div className="w-full h-32 relative">
+                <img
+                  src={friend.image}
+                  alt={`Friend ${friend.id}`}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-orange-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-            </div>
+            </Card>
           ))}
         </div>
         
         <div className="text-center mt-8">
-          <Card className="bg-white/60 backdrop-blur-sm border-purple-200 p-6 rounded-2xl shadow-lg max-w-2xl mx-auto">
-            <p className="text-purple-700 text-lg leading-relaxed">
+          <Card className="bg-white/60 backdrop-blur-sm border-orange-200 p-6 rounded-2xl shadow-lg max-w-2xl mx-auto">
+            <p className="text-orange-700 text-lg leading-relaxed">
               These are the amazing people who make life more colorful and meaningful. 
-              Each friend brings their own unique energy and creates unforgettable memories! 🌟
+              Each friend brings their own unique energy and creates unforgettable memories!
             </p>
           </Card>
         </div>
