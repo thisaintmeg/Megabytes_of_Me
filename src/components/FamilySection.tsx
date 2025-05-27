@@ -11,7 +11,6 @@ const FamilySection = () => {
       name: 'Benjamin Cuizon',
       relation: 'Father',
       image: '/dad.jpg',
-      alt: 'dad',
       description: 'The pillar of our family, always supportive and caring.'
     },
     {
@@ -19,7 +18,6 @@ const FamilySection = () => {
       name: 'Babeth Cuizon',
       relation: 'Mother',
       image: '/mom.jpg',
-      alt: 'mom',
       description: 'The heart of our home, full of love and wisdom.'
     },
     {
@@ -27,15 +25,13 @@ const FamilySection = () => {
       name: 'Rainier Benz Cuizon',
       relation: 'Brother',
       image: '/kuya.jpg',
-      alt: 'kuya',
       description: 'My partner in crime and best friend growing up.'
     },
     {
       id: 4,
-      name: 'Meghan Cuizon',
+      name: 'Meghan Curzon',
       relation: 'Me',
       image: '/meg.jpg',
-      alt: 'meg',
       description: 'Just me, living life and cherishing family moments.'
     },
     {
@@ -43,7 +39,6 @@ const FamilySection = () => {
       name: 'Christine Jane Cuizon',
       relation: 'Sister',
       image: '/tin.jpg',
-      alt: 'tin',
       description: 'The youngest but with the biggest heart in our family.'
     }
   ];
@@ -53,30 +48,33 @@ const FamilySection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-yellow-25 to-pink-100 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-50 to-pink-100 p-6">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-orange-800 text-center mb-12 uppercase">FAMILY</h1>
-        
+        <h1 className="text-4xl font-bold text-purple-800 text-center mb-12 uppercase tracking-wide">
+          FAMILY
+        </h1>
+
+        {/* Family Members in One Line */}
         <div className="flex gap-6 justify-center items-center overflow-x-auto pb-4">
           {familyMembers.map((member) => (
             <Card 
               key={member.id}
-              className="bg-white/60 backdrop-blur-sm border-orange-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0 w-64"
+              className="bg-white/60 backdrop-blur-sm border-purple-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0 w-64"
             >
               <div className="relative">
                 <img
                   src={member.image}
-                  alt={member.alt}
+                  alt={member.name}
                   className="w-full h-48 object-cover cursor-pointer hover:scale-105 transition-transform duration-500"
-                  onClick={() => openImage(member.image, member.alt)}
+                  onClick={() => openImage(member.image, member.name)}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
               </div>
-              
-              <div className="p-4 text-center bg-gradient-to-b from-white/80 to-orange-50/80">
-                <h3 className="text-lg font-bold text-orange-800 mb-1">{member.name}</h3>
-                <p className="text-orange-600 text-sm mb-2 font-medium">{member.relation}</p>
-                <p className="text-orange-700 text-xs leading-relaxed">{member.description}</p>
+
+              <div className="p-4 text-center bg-gradient-to-b from-white/80 to-purple-50/80">
+                <h3 className="text-lg font-bold text-purple-800 mb-1">{member.name}</h3>
+                <p className="text-purple-600 text-sm mb-2 font-medium">{member.relation}</p>
+                <p className="text-purple-700 text-xs leading-relaxed">{member.description}</p>
               </div>
             </Card>
           ))}

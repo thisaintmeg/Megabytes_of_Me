@@ -10,21 +10,24 @@ const HobbiesSection = () => {
     { 
       id: 1, 
       title: 'Nature Trip', 
-      image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&h=300&fit=crop',
+      image: '/nature.jpg',
+      alt: 'Nature Trip',
       description: 'Exploring the beauty of nature and capturing scenic moments',
       emoji: '🌿'
     },
     { 
       id: 2, 
       title: 'Online Gaming', 
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop',
+      image: '/gaming.jpg',
+      alt: 'Online Gaming',
       description: 'Strategic gaming sessions and connecting with fellow gamers',
       emoji: '🎮'
     },
     { 
       id: 3, 
       title: 'Photography', 
-      image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=400&h=300&fit=crop',
+      image: '/photography.jpg',
+      alt: 'Photography',
       description: 'Capturing life\'s beautiful moments through my lens',
       emoji: '📸'
     }
