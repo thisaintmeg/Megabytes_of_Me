@@ -10,58 +10,107 @@ const FriendsSection = () => {
     { 
       id: 1, 
       image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop',
-      position: 'top-12 left-20',
+      position: 'top-8 left-16',
       rotation: 'rotate-12',
-      size: 'w-24 h-24'
+      size: 'w-20 h-20'
     },
     { 
       id: 2, 
       image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=300&fit=crop',
-      position: 'top-20 right-32',
+      position: 'top-12 right-24',
       rotation: '-rotate-6',
-      size: 'w-28 h-28'
+      size: 'w-24 h-24'
     },
     { 
       id: 3, 
       image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop',
-      position: 'top-40 left-1/3',
+      position: 'top-32 left-1/4',
       rotation: 'rotate-3',
-      size: 'w-32 h-32'
+      size: 'w-22 h-22'
     },
     { 
       id: 4, 
       image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=300&fit=crop',
-      position: 'top-52 right-1/4',
+      position: 'top-28 right-1/3',
       rotation: '-rotate-12',
-      size: 'w-26 h-26'
+      size: 'w-18 h-18'
     },
     { 
       id: 5, 
       image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=300&h=300&fit=crop',
-      position: 'top-72 left-24',
+      position: 'top-52 left-20',
       rotation: 'rotate-6',
-      size: 'w-30 h-30'
+      size: 'w-26 h-26'
     },
     { 
       id: 6, 
       image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300&h=300&fit=crop',
-      position: 'top-80 right-20',
+      position: 'top-48 right-16',
       rotation: '-rotate-3',
-      size: 'w-28 h-28'
+      size: 'w-20 h-20'
     },
     { 
       id: 7, 
       image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=300&h=300&fit=crop',
-      position: 'top-96 left-1/2',
+      position: 'top-72 left-1/2',
       rotation: 'rotate-9',
       size: 'w-24 h-24'
     },
     { 
       id: 8, 
       image: 'https://images.unsplash.com/photo-1466442929976-97f336a657be?w=300&h=300&fit=crop',
-      position: 'top-108 right-1/3',
+      position: 'top-68 right-1/4',
       rotation: '-rotate-6',
-      size: 'w-32 h-32'
+      size: 'w-22 h-22'
+    },
+    { 
+      id: 9, 
+      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop',
+      position: 'top-96 left-32',
+      rotation: 'rotate-15',
+      size: 'w-20 h-20'
+    },
+    { 
+      id: 10, 
+      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=300&fit=crop',
+      position: 'top-92 right-28',
+      rotation: '-rotate-8',
+      size: 'w-18 h-18'
+    },
+    { 
+      id: 11, 
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop',
+      position: 'top-116 left-1/3',
+      rotation: 'rotate-4',
+      size: 'w-24 h-24'
+    },
+    { 
+      id: 12, 
+      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=300&fit=crop',
+      position: 'top-112 right-20',
+      rotation: '-rotate-10',
+      size: 'w-20 h-20'
+    },
+    { 
+      id: 13, 
+      image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=300&h=300&fit=crop',
+      position: 'top-136 left-24',
+      rotation: 'rotate-7',
+      size: 'w-22 h-22'
+    },
+    { 
+      id: 14, 
+      image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300&h=300&fit=crop',
+      position: 'top-132 right-1/3',
+      rotation: '-rotate-4',
+      size: 'w-18 h-18'
+    },
+    { 
+      id: 15, 
+      image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=300&h=300&fit=crop',
+      position: 'top-156 left-1/2',
+      rotation: 'rotate-11',
+      size: 'w-24 h-24'
     }
   ];
 
@@ -74,8 +123,8 @@ const FriendsSection = () => {
       <div className="max-w-6xl mx-auto relative">
         <h1 className="text-4xl font-bold text-purple-800 text-center mb-8">Friends</h1>
         
-        {/* Scattered Friends Layout - Non-overlapping */}
-        <div className="relative min-h-[900px]">
+        {/* Scattered Friends Layout - 15 pictures */}
+        <div className="relative min-h-[1100px]">
           {friends.map((friend) => (
             <div
               key={friend.id}
