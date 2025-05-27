@@ -7,16 +7,76 @@ const FriendsSection = () => {
   const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
 
   const friends = [
-    { id: 1, image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop' },
-    { id: 2, image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=300&fit=crop' },
-    { id: 3, image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop' },
-    { id: 4, image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=300&fit=crop' },
-    { id: 5, image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=300&h=300&fit=crop' },
-    { id: 6, image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300&h=300&fit=crop' },
-    { id: 7, image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=300&h=300&fit=crop' },
-    { id: 8, image: 'https://images.unsplash.com/photo-1466442929976-97f336a657be?w=300&h=300&fit=crop' },
-    { id: 9, image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop' },
-    { id: 10, image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=300&fit=crop' }
+    { 
+      id: 1, 
+      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop',
+      position: 'top-8 left-12',
+      rotation: 'rotate-12',
+      size: 'w-24 h-24'
+    },
+    { 
+      id: 2, 
+      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=300&fit=crop',
+      position: 'top-16 right-20',
+      rotation: '-rotate-6',
+      size: 'w-28 h-28'
+    },
+    { 
+      id: 3, 
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop',
+      position: 'top-32 left-1/3',
+      rotation: 'rotate-3',
+      size: 'w-32 h-32'
+    },
+    { 
+      id: 4, 
+      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=300&fit=crop',
+      position: 'top-44 right-1/4',
+      rotation: '-rotate-12',
+      size: 'w-26 h-26'
+    },
+    { 
+      id: 5, 
+      image: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=300&h=300&fit=crop',
+      position: 'top-56 left-16',
+      rotation: 'rotate-6',
+      size: 'w-30 h-30'
+    },
+    { 
+      id: 6, 
+      image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300&h=300&fit=crop',
+      position: 'top-60 right-12',
+      rotation: '-rotate-3',
+      size: 'w-28 h-28'
+    },
+    { 
+      id: 7, 
+      image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=300&h=300&fit=crop',
+      position: 'top-72 left-1/2',
+      rotation: 'rotate-9',
+      size: 'w-24 h-24'
+    },
+    { 
+      id: 8, 
+      image: 'https://images.unsplash.com/photo-1466442929976-97f336a657be?w=300&h=300&fit=crop',
+      position: 'top-80 right-1/3',
+      rotation: '-rotate-6',
+      size: 'w-32 h-32'
+    },
+    { 
+      id: 9, 
+      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop',
+      position: 'top-96 left-20',
+      rotation: 'rotate-12',
+      size: 'w-28 h-28'
+    },
+    { 
+      id: 10, 
+      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=300&fit=crop',
+      position: 'top-96 right-16',
+      rotation: '-rotate-9',
+      size: 'w-26 h-26'
+    }
   ];
 
   const openImage = (src: string, alt: string) => {
@@ -24,36 +84,51 @@ const FriendsSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-purple-700 p-6">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-5xl font-bold text-white text-center mb-12">Friends</h1>
+    <div className="min-h-screen bg-gradient-to-br from-purple-100 via-violet-50 to-purple-200 p-6 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative">
+        <h1 className="text-4xl font-bold text-purple-800 text-center mb-8">Friends</h1>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        {/* Scattered Friends Layout */}
+        <div className="relative min-h-[800px]">
           {friends.map((friend) => (
-            <Card
+            <div
               key={friend.id}
-              className="group bg-white/10 backdrop-blur-md border-white/20 rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 cursor-pointer"
+              className={`absolute ${friend.position} ${friend.rotation} hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer group`}
               onClick={() => openImage(friend.image, `Friend ${friend.id}`)}
             >
-              <div className="relative aspect-square">
-                <img
-                  src={friend.image}
-                  alt={`Friend ${friend.id}`}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <Card className="bg-white/80 backdrop-blur-sm border-purple-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:-rotate-0">
+                <div className={`${friend.size} relative`}>
+                  <img
+                    src={friend.image}
+                    alt={`Friend ${friend.id}`}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </Card>
+              
+              {/* Fun emoji reactions */}
+              <div className="absolute -top-2 -right-2 text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-bounce">
+                {friend.id % 4 === 0 ? '😄' : friend.id % 3 === 0 ? '🎉' : friend.id % 2 === 0 ? '💫' : '✨'}
               </div>
-            </Card>
+            </div>
           ))}
         </div>
         
-        <div className="text-center mt-12">
-          <p className="text-purple-200 text-lg leading-relaxed max-w-2xl mx-auto">
-            These are the amazing people who make life more colorful and meaningful. 
-            Each friend brings their own unique energy and creates unforgettable memories.
-          </p>
+        <div className="text-center mt-8">
+          <Card className="bg-white/80 backdrop-blur-sm border-purple-200 p-6 rounded-2xl shadow-lg max-w-2xl mx-auto">
+            <p className="text-purple-700 text-lg leading-relaxed">
+              These are the amazing people who make life more colorful and meaningful. 
+              Each friend brings their own unique energy and creates unforgettable memories! 🌟
+            </p>
+          </Card>
         </div>
       </div>
+
+      {/* Fun floating elements */}
+      <div className="absolute top-32 left-8 w-6 h-6 bg-purple-300 rounded-full animate-pulse opacity-40"></div>
+      <div className="absolute top-60 right-12 w-4 h-4 bg-violet-400 rounded-full animate-bounce opacity-50"></div>
+      <div className="absolute bottom-40 left-16 w-5 h-5 bg-purple-200 rounded-full animate-pulse opacity-30" style={{animationDelay: '1.5s'}}></div>
 
       <ImageModal
         isOpen={!!selectedImage}
